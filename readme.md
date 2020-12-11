@@ -40,7 +40,7 @@ Desc: 用于把终端的输出打印到文件中
 Usage:
 ```python
 logger_name = time.strftime('%Y-%m-%d-%H-%M-%S-') + 'train.log'
-sys.stdout = Logger(os.path.join('log', DLmodel.model_name, logger_name))
+sys.stdout = Logger(os.path.join('log', DLmodel.model_name, logger_name))   # just for example
 ```
 
 #### lr_scheduler.py
