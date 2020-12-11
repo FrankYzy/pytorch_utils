@@ -48,4 +48,4 @@ sys.stdout = Logger(os.path.join('log', DLmodel.model_name, logger_name))
 
 ### TODO List
 - [ ] Augmix图像增强
-- [ ] 
+- [ ] 测试lr_scheduler.py中的WarmupWithCosineDecay

@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 
-class WarmupWithCosine(object):
+class WarmupWithCosineDecay(object):
     def __init__(self, optimizer, lr_max=0.01, lr_min=0, warm_milestone=10, total_milestone=100):
         """
         Desc:           先warmup，后余弦decay的学习率调整策略，大致遵循了pytorch的API的一贯写法
