@@ -55,13 +55,8 @@ sys.stdout = Logger(os.path.join('log', DLmodel.model_name, logger_name))   # ju
 
   带LabelSmooth的CrossEntropy Loss
 
-- NLLLossWithLabelSmooth
-
-  带LabelSmooth的NLLLoss
-
 
 ### TODO List
 - [ ] Augmix图像增强
-- [ ] 测试NLLLossWithLabelSmooth
 - [X] 添加labelsmoothing的loss
 - [X] 测试lr_scheduler.py中的WarmupWithCosineDecay
