@@ -45,8 +45,23 @@ sys.stdout = Logger(os.path.join('log', DLmodel.model_name, logger_name))   # ju
 
 #### lr_scheduler.py
 
+- WarmupWithCosineDecay
+    
+    先Warmup，后余弦衰减从最大lr衰减到最小lr的学习率更新策略。用法与PyTorch的API一致。
+
+#### loss_func.py
+
+- CrossEntropyLossWithLabelSmooth
+
+  带LabelSmooth的CrossEntropy Loss
+
+- NLLLossWithLabelSmooth
+
+  带LabelSmooth的NLLLoss
+
 
 ### TODO List
 - [ ] Augmix图像增强
-- [ ] 测试lr_scheduler.py中的WarmupWithCosineDecay
-- [ ] 添加labelsmoothing的loss
+- [ ] 测试NLLLossWithLabelSmooth
+- [X] 添加labelsmoothing的loss
+- [X] 测试lr_scheduler.py中的WarmupWithCosineDecay
