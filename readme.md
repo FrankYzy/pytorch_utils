@@ -55,6 +55,24 @@ sys.stdout = Logger(os.path.join('log', DLmodel.model_name, logger_name))   # ju
 
   带LabelSmooth的CrossEntropy Loss
 
+#### dataset_utils.py
+
+Desc: 计算与多分类数据集相关的参数，如normalize所需的mean和std、用于nll loss加权用的各类类别权重计算。
+
+- get_mean_and_std
+
+  功能：计算数据集中图像的均值和标准差，用于normalize
+  
+  接收参数：torch.dataset类型或继承自该类型的表示数据集的变量
+  
+- get_class_weight
+
+  功能：计算数据集中每类的加权权重，计算公式：1/n*N，其中n是当前类的样本数量，N是数据集中所有样本的数量
+
+  接收参数：torch.dataset类型或继承自该类型的表示数据集的变量
+  
+
+
 
 ### TODO List
 - [ ] Augmix图像增强
