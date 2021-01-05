@@ -71,7 +71,13 @@ Desc: 计算与多分类数据集相关的参数，如normalize所需的mean和s
 
   接收参数：torch.dataset类型或继承自该类型的表示数据集的变量
   
+#### data_augmentation.py
 
+Desc: 各种数据增强的实现
+
+- mixup
+
+  功能：图像mixup增强，具体用法见源码中的注释部分
 
 
 ### TODO List
