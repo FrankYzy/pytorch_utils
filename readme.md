@@ -79,6 +79,14 @@ Desc: 各种数据增强的实现
 
   功能：图像mixup增强，具体用法见源码中的注释部分
 
+#### grad_cam.py
+
+Desc：激活图可视化
+
+- model_response_visualization
+
+  功能：用GradCAM方法生成模型指定层对输入图像的响应的热力图，用于模型解释。具体用法见代码中注释。
+
 
 ### TODO List
 - [ ] Augmix图像增强

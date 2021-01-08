@@ -252,7 +252,34 @@ def model_response_visualization(image_path, transform, model, target_layer, arc
             output_dir: 生成的响应热力图结果保存的位置
             classes:    预测输出对应的类别名称列表
             device:     运行设备,cpu/cuda
-    :额外注释： 本代码中还有一些注释掉的行，取消注释的话可以获得其他方法生成的热力图，但可视化效果不太好，就暂时注释了。
+    :额外注释   本代码中还有一些注释掉的行，取消注释的话可以获得其他方法生成的热力图，但可视化效果不太好，就暂时注释了。
+    :Usage
+            >>> # Here is a simple usage.
+            >>> transform=transforms.Compose([
+            >>>     transforms.Resize([256, 256]),
+            >>>     transforms.CenterCrop([224, 224]),
+            >>>     transforms.ToTensor(),
+            >>>     transforms.Normalize(mean=(0.4197, 0.4863, 0.2993), std=(0.2236, 0.2356, 0.1933))
+            >>> ])
+
+            >>> DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
+            >>> model = torchvision.models.vgg19_bn(pretrained=False, progress=True)
+            >>> model.classifier[6] = torch.nn.Linear(in_features=4096, out_features=5, bias=True)
+            >>> model.load_state_dict(torch.load('./checkpoints/vgg19_bn_30.pt'))
+            >>> print(model)
+
+            >>> model_response_visualization(
+            >>>     image_path='./images/109816879.jpg',
+            >>>     transform=transform,
+            >>>     target_layer='features',
+            >>>     arch='vgg19_bn',
+            >>>     topk=3,
+            >>>     output_dir='./results',
+            >>>     model=model,
+            >>>     classes=dataset.val_data.classes,
+            >>>     device=DEVICE
+            >>> )
     """
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
