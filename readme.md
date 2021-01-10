@@ -87,6 +87,14 @@ Desc：激活图可视化
 
   功能：用GradCAM方法生成模型指定层对输入图像的响应的热力图，用于模型解释。具体用法见代码中注释。
 
+#### seed_everything.py
+
+Desc: 为random, pytorch, numpy以及python本身设置固定的随机数种子，以便重新运行时复现结果。
+
+- seed_everything
+  
+  功能：为random, pytorch, numpy以及python本身设置固定的随机数种子，以便重新运行时复现结果。建议在主要代码逻辑前运行该函数。
+
 
 ### TODO List
 - [ ] Augmix图像增强
